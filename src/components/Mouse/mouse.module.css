@@ -1,0 +1,6 @@
+.mouse {
+  border: solid 1px black;
+  width: 25px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
