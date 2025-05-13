@@ -1,6 +1,12 @@
 .mouse {
-  border: solid 1px black;
-  width: 25px;
+  --clr-dark: hsl(0, 0%, 10%);
+  --circle-width: 20px;
+
+  background-color: var(--clr-dark);
+
+  width: var(--circle-width);
   aspect-ratio: 1/1;
   border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
 }

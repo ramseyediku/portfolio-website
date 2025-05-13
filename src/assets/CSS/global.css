@@ -98,4 +98,10 @@ textarea:not([rows]) {
 
 /* CSS GLOBAL STYLES */
 :root {
+  --clr-dark: hsl(0, 0%, 0%);
+  --clr-light: hsl(0, 0%, 100%);
+}
+
+* {
+  cursor: none;
 }

@@ -1,5 +1,6 @@
 import styles from "./main.module.css";
 import Mouse from "../Mouse/Mouse";
+import Hero from "../Hero/Hero";
 import React, { useRef, useEffect } from "react";
 
 function Main() {
@@ -9,17 +10,29 @@ function Main() {
   useEffect(() => {
     const handleMouseMove = (event) => {
       if (mouseRef.current) {
+        mouseRef.current.classList.remove(styles.linkHover);
+        let scale = 1;
         let mouseHeight = mouseRef.current.offsetHeight;
         let mouseWidth = mouseRef.current.offsetWidth;
-        mouseRef.current.style.transition = "transform 200ms ease-out";
+        let clientX = event.pageX;
+        let clientY = event.pageY;
+
+        const target = document.elementFromPoint(clientX, clientY);
+        if (target.tagName == "A") {
+          mouseRef.current.classList.add(styles.linkHover);
+          scale *= 2;
+        }
+
+        mouseRef.current.style.transition = "transform 25ms ease-out";
         mouseRef.current.style.transform = `translate(${
-          event.pageX - mouseWidth / 2
-        }px,${event.pageY - mouseHeight / 2}px)`;
+          clientX - mouseWidth / 2
+        }px,${clientY - mouseHeight / 2}px) scale(${scale})`;
       }
     };
 
-    if (mainRef.current)
+    if (mainRef.current) {
       mainRef.current.addEventListener("mousemove", handleMouseMove);
+    }
 
     return () => {
       if (mainRef.current)
@@ -30,6 +43,7 @@ function Main() {
   return (
     <main ref={mainRef}>
       <Mouse ref={mouseRef}></Mouse>
+      <Hero></Hero>
     </main>
   );
 }

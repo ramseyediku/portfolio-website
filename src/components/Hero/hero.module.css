@@ -1,0 +1,10 @@
+.hero {
+  text-align: center;
+
+  h1 {
+    font-family: "Excon", sans-serif;
+    font-weight: 700;
+    margin-bottom: 1em;
+    font-size: 5rem;
+  }
+}

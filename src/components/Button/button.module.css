@@ -1,0 +1,7 @@
+.button {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  border-radius: 4em;
+  padding: 1em 3em;
+  display: inline-block;
+}
