@@ -5,7 +5,7 @@ import React, { useRef, useEffect } from "react";
 function Hero() {
   return (
     <section className={styles.hero} href="#">
-      <h1>ASPIRING DEVELOPER</h1>
+      <h1>Aspiring Developer</h1>
       <Button />
     </section>
   );

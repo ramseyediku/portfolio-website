@@ -1,7 +1,12 @@
+import React, { useRef, useEffect } from "react";
+
 import styles from "./main.module.css";
 import Mouse from "../Mouse/Mouse";
 import Hero from "../Hero/Hero";
-import React, { useRef, useEffect } from "react";
+import About from "../About/About";
+import Experience from "../Experience/Experience";
+import Projects from "../Projects/Projects";
+import Footer from "../Footer/Footer";
 
 function Main() {
   const mouseRef = useRef(null);
@@ -18,6 +23,7 @@ function Main() {
         let clientY = event.pageY;
 
         const target = document.elementFromPoint(clientX, clientY);
+
         if (target.tagName == "A") {
           mouseRef.current.classList.add(styles.linkHover);
           scale *= 2;
@@ -30,9 +36,8 @@ function Main() {
       }
     };
 
-    if (mainRef.current) {
+    if (mainRef.current)
       mainRef.current.addEventListener("mousemove", handleMouseMove);
-    }
 
     return () => {
       if (mainRef.current)
@@ -44,6 +49,10 @@ function Main() {
     <main ref={mainRef}>
       <Mouse ref={mouseRef}></Mouse>
       <Hero></Hero>
+      <About></About>
+      <Experience></Experience>
+      <Projects></Projects>
+      <Footer></Footer>
     </main>
   );
 }

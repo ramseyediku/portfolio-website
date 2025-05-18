@@ -3,7 +3,7 @@
   --body-line-height: 1.5;
   --heading-line-height: 1.1;
 
-  --font-family: "Montserrat", sans-serif;
+  --heading-font-family: "Excon", sans-serif;
 }
 
 /* applying box-sizing of border-box */
@@ -33,7 +33,7 @@ body {
 
 /* makes titles and headings wrap in a readable way */
 :where(h1, h2, h3, h4) {
-  font-family: var(--font-family);
+  font-family: var(--heading-font-family);
   text-wrap: balance;
   line-height: var(--heading-line-height);
 }
